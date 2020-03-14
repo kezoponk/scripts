@@ -1,4 +1,4 @@
-# Shell Scripts
+# Kezos Shell Scripts
 
 Created some useful scripts for personal use from time to time and thought it wouldn't hurt to share <br><br>
 
