@@ -2,7 +2,7 @@
 
 Created some useful scripts for personal use from time to time and thought it wouldn't hurt to share <br><br>
 
-### Betteraptupgrade.sh
+### Betteraptupgrade.sh [ REQUIRES SU NOT SUDO ]
 
 Write in the excludes.txt file the packages that you don't want to update <br>
 A good way to do this is to run the script, then script will output all upgradeable packages into the upgradeables.txt <br>
