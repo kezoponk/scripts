@@ -16,7 +16,7 @@ but because I think it is messy to create the index.js and package.json files fo
 specific for each program <br><br>
 
 ### Bytesorter
-<br>
+
 Something overkill I created partly for fun to use on code for a protocol decode program
 <br><code>
 javac bytesorter.java
