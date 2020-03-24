@@ -23,8 +23,12 @@ public class bytesorter {
         return count;
     }
 
-    static String javaSplitter(String line) {
-        String splittedLine[] = line.split(" 0b");
+    static String javaAndPythonSplitter(String line) {
+        String type = "";
+        if (line.contains("& 0b")) type = "b";      // Byte
+        else if (line.contains("& 0x")) type = "x"; // Hex
+
+        String splittedLine[] = line.split("& 0"+type);
         String trimmed = "";
 
         for (String character : splittedLine[1].split("")) {
@@ -39,13 +43,7 @@ public class bytesorter {
     }
 
     static void getBytes(String line) {
-
-        switch (lang) {
-            case 1:
-                Bytes[index] = (byte) (-1*Byte.parseByte(javaSplitter(line), 2));
-                break;
-            case 2: break;
-        }
+        Bytes[index] = (byte) (-1*Byte.parseByte(javaAndPythonSplitter(line), 2));
 
         unsortedStrings[index] = line;
         unsortedBytes[index] = Bytes[index];
@@ -77,17 +75,10 @@ public class bytesorter {
     }
 
     public static void main(String[] args) {
-        System.out.println("Available Options:\n(1)Java\n");
-        System.out.print("Language: ");
-
-        Scanner scanner = new Scanner(System.in);
-        try {
-            lang = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid option");
-        }
+        System.out.println("Tested with:\nJava\nPython\n");
 
         System.out.println("Paste if selection with bytes to sort, press space -> enter when finished");
+        Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
         try {
             scanner.forEachRemaining(line -> getBytes(line));
