@@ -18,10 +18,12 @@ specific for each program <br><br>
 ### Bytesorter
 
 Something overkill I created partly for fun to use on code for a protocol decode program
-<br><code>
-javac bytesorter.java <br><br>
+<br>
+```
+javac bytesorter.java
 java bytesorter
-</code><br>
+```
+<br>
 Then just paste the if selection in there, supports both python & java<br><br>
 
 ### Fake-access-point
