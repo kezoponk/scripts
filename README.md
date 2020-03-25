@@ -19,7 +19,7 @@ specific for each program <br><br>
 
 Something overkill I created partly for fun to use on code for a protocol decode program
 <br><code>
-javac bytesorter.java <br>
+javac bytesorter.java <br><br>
 java bytesorter
 </code><br>
 Then just paste the if selection in there, supports both python & java<br><br>
