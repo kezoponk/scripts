@@ -29,8 +29,8 @@ do
   excludelengthtemp=$(($excludelength - 0))
 
   echo
-  echo $amount remaining upgrades
   echo Current step: $package
+  echo $amount remaining upgrades
 
   # Compare with all packages in excludes file
   while [ $excludelengthtemp -gt 0 ]
