@@ -15,16 +15,6 @@ Simple script to generate an electron app, the general reason why I created this
 but because I think it is messy to create the index.js and package.json files for each program even though they are not very <br>
 specific for each program <br><br>
 
-### Bytesorter
-
-Something overkill I created partly for fun to use on code for a protocol decode program
-<br>
-```
-javac bytesorter.java
-java bytesorter
-```
-Then just paste the if selection in there, supports both python & java<br><br>
-
 ### Fake-access-point
 
 > 1. Run script first to define all variables and create an airbase-ng session
