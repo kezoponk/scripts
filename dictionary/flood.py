@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     url = 'http://83.160.88.114:8080/home.htm'
 
-    names = json.loads(open('names.json').read())
+    names = json.loads(open('words.json').read())
 
     for name in names:
       post_it(name)
