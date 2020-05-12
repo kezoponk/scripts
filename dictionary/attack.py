@@ -18,7 +18,7 @@ def post_it(password):
     # password = password.join(random.choice(chars) for i in range(8))
 
     response = requests.post(target_url, allow_redirects=False, data={
-    	'UserName': "user",
+    	'UserName': target_username,
         'loginPassword': "ZyXEL ZyWALL Series",
         'submitValue': "1",
     	'hiddenPassword': password,
