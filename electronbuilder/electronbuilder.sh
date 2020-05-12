@@ -45,7 +45,7 @@ app.on('ready', function() {
   })
   $max
   mainWindow.loadURL('file://'+__dirname+'/htdocs/index.html')
-})">>index.js
+})" >> index.js
 
 echo "Done, building"
 npm run build
