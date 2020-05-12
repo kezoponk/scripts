@@ -29,6 +29,6 @@ def post_it(password):
         exit(0)
 
 if __name__ == "__main__":
-    passwords = json.loads(open('password.json').read())
+    passwords = json.loads(open('words.json').read())
     for password in passwords:
       post_it(password)
