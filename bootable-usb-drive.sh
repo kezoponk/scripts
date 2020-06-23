@@ -10,7 +10,7 @@ drive_name=$('echo "$drive" | cut -d'/' -f2')
 
 if [ "$valid_disk" == "Unmount of all volumes on $drive_name was successful" ]
 then
-  echo "Starting transfer, may take up to 2 hours"
+  echo "Starting transfer, may take up to 2 hours\ncontrol+t for progress"
   sudo dd if=$image of=$drive bs=8m
 else
   echo "Invalid drive $drive_name"
