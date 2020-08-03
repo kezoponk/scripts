@@ -16,7 +16,6 @@ def post_it(username):
         'password': password,
         'Submit': "submit"
     })
-
     print('Entering password '+password+' on '+username)
     if any(if_contain_then_invalid in str(response.content) for if_contain_then_invalid in if_contains_then_invalid):
         print("[+] {}s password is {}".format(username, password))
