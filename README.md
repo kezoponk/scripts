@@ -21,7 +21,6 @@ specific for each program <br><br>
 > 2. ./sslstrip.sh
 > 3. ./ettercap.sh
 
-<br>
 Use with caution and respect others privacy <br>
 This creates a wifi that you create with one usb adapter, <br>
 and redirect to a real network with your other adapter/card/ethernet <br>
