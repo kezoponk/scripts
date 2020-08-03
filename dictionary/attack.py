@@ -10,7 +10,6 @@ if_contains_then_valid = []
 if_contains_then_invalid = ['not permission', 'is_invalid']
 
 def post_it(password):
-
     # password = password.lower()
     # password = string.ascii_letters + string.digits
     # password = (os.urandom(1024))
@@ -22,7 +21,6 @@ def post_it(password):
         'password': password,
         'Submit': "Login"
     })
-    
     print('testing password '+password+' on '+target_username)
     contains_valid = any(if_contain_then_valid in str(response.content) for if_contain_then_valid in if_contains_then_valid)
     contains_invalid = any(if_contain_then_invalid in str(response.content) for if_contain_then_invalid in if_contains_then_invalid)
