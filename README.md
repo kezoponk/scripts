@@ -6,7 +6,7 @@ Created some useful scripts for personal use from time to time and thought it wo
 
 Write in the excludes.txt file the packages that you don't want to update <br>
 A good way to do this is to run the script, then script will output all upgradeable packages into the upgradeables.txt <br>
-Locate unwanted upgrades in upgradeables.txt and paste them into excludes.txt
+Locate unwanted upgrades in upgradeables.txt and paste them into excludes.txt<br>
 **REQUIRES SU NOT SUDO**
 <br><br>
  
